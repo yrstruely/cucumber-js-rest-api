@@ -11,7 +11,7 @@ import {
   getMessage,
   getPersonHeardmMessages,
 
-} from './src/shouty-world.js'
+} from '../shouty-world.js'
 
 const app = express();
 const port = 3000;
