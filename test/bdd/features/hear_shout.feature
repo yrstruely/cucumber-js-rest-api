@@ -24,7 +24,7 @@ Feature: Hear Shout
 
             Examples:
                 | Range |
-                | 100   |
+                | 102   |
                 | 10    |
 
 

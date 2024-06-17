@@ -3,10 +3,15 @@ import { assertThat, is } from 'hamjest';
 import { deepEqual } from 'node:assert';
 import { Person } from '../../../../src/shouty.js';
 
+import {
+    changeRange
+} from '../support/utils/requests.js'
+
 const default_distance = 0
 
-Given('the range is {int} meters', function (range) {
+Given('the range is {int} meters', async function (range) {
     this.network.range = range
+    await changeRange(range)
 });
 
 Given('a person named {word}', function (name) {
