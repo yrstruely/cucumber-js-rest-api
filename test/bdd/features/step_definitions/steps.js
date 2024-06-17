@@ -4,6 +4,10 @@ import { deepEqual } from 'node:assert';
 import { Person } from '../../../../src/shouty.js';
 
 import {
+    sleep
+} from '../support/utils/utils.js'
+
+import {
     changeRange,
     addPerson,
     addPersonInNetwork,
@@ -16,22 +20,25 @@ const default_distance = 0
 
 Given('the range is {int} meters', async function (range) {
     this.network.range = range
+    await sleep(3)
     await changeRange(range)
 });
 
-Given('a person named {word}', function (name) {
+Given('a person named {word}', async function (name) {
+    await sleep(3)
     this.people[name] = new Person({ name: name, location: default_distance })
+    await sleep(3)
     this.network.addPerson(this.people[name])
 });
 
 Given('people are located at:', async function (dataTable) {
-    dataTable.transpose().hashes().map((person) => {
+    for(const person of dataTable.transpose().hashes()) {
+        await sleep(3)
         addPerson(person.name, person.location)
-        addPersonInNetwork(person.name)
 
-        // this.people[person.name] = new Person({ name: person.name, location:person.location })
-        // this.network.addPerson(this.people[person.name])
-    })
+        await sleep(3)
+        addPersonInNetwork(person.name)
+    }
 });
 
 Then('{Person} hears {Person}\'s message', function (hearer, shouter) {
@@ -48,18 +55,17 @@ Then('{Person} hears the following messages:', function (hearer, expectedMessage
 });
 
 Then('{Person} only hears {Person}\'s message when she is in range', async function (hearer, shouter) {
-    const inRange = checkInRange(hearer.name)
-    // if (this.people[hearer.name].inRange()) {
+
+    await sleep(3)
+    const inRange = await checkInRange(hearer.name)
+
     if (inRange) {
         const heardMessages = await getPersonHeardMessages(hearer.name)
         const message = await getMessage()
-
-        console.log('heard messages:', heardMessages, message)
         assertThat(heardMessages, is([message]))
-
-        // assertThat(this.people[hearer.name].messagesHeard(), is([this.message]))
     }
     else {
-        assertThat(this.people[hearer.name].messagesHeard(), is([]))
+        const heardMessages = await getPersonHeardMessages(hearer.name)
+        assertThat(heardMessages, is([]))
     }
 });

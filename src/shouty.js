@@ -7,6 +7,7 @@ export class Person {
     }
 
     shout(message) {
+        console.log('before shout: ', this.network)
         this.network.addMessage(message)
     }
 

@@ -74,8 +74,6 @@ app.post('/network/person-add', (req, res) => {
 app.post('/shout', (req, res) => {
   const { from, message } = req.body;
 
-  console.log("shout from: ", from, message)
-
   if (!from || !message) {
     return res.status(400).json({ error: 'From(Shouter) and Message are required' });
   }
@@ -122,7 +120,7 @@ app.get('/person/heard-messages/:name', (req, res) => {
   console.log('heard message', ret, name)
 
   res.status(201).json({
-    data: ret | []
+    data: ret.length === 0 ? [] : ret
   });
 });
 

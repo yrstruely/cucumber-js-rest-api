@@ -27,7 +27,6 @@ Feature: Hear Shout
                 | 102   |
                 | 10    |
 
-
     # Rule: Listeners can hear multiple shouts
 
     #     Scenario: Two shouts

@@ -51,21 +51,26 @@ export function addPersonInNetwork({ name }) {
 }
 
 export function shout({ from, message }) {
+
+    console.log('shoutyWord.network', shoutyWord.network)
+
     if (from && message) {
         shoutyWord.shout({ from, message })
     }
+
+    console.log('after shoutyWord.network', shoutyWord.network)
 }
 
 /*
 this.people[hearer.name].inRange()
 */
-export function isPersonInRange({ name }) {
-    if (name) {
-        const person = shoutyWord.people[name]
-        return person && person.inRange()
-    }
+export function isPersonInRange(name) {
+    const person = shoutyWord.people[name]
 
-    return false
+    console.log(name, person)
+    printStatus()
+
+    return person && person.inRange()
 }
 
 export function getMessage() {
@@ -77,6 +82,8 @@ export function getPersonHeardmMessages(name) {
     if (person) {
         return person.messagesHeard()
     }
+
+    return []
 
     printStatus()
 }
