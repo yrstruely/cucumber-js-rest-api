@@ -32,6 +32,12 @@ Before running the application, you need to have [Node.js](https://nodejs.org/) 
 
 To run the application:
 
+ - Run the API:
+ ```bash
+ node src/api/server.js
+ ```
+
+ - Run the tests:
 ```bash
 npm test
 ```
