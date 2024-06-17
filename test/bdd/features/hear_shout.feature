@@ -41,14 +41,14 @@ Feature: Hear Shout
 
     # Rule: Maximum length of a message
 
-    #     @run-me
-    #     Scenario: Message too long
-    #         Given a person named Sean
-    #         And a person named Lucy
-    #         When Sean shouts the following message
-    #         """
-    #         01234567890123456789012345678901234567890123456789012345
-    #         678901234567890123456789012345678901234567890123456789012345678901234
-    #         5678901234567890123456789012345678901234567890123456789x
-    #         """
-    #         Then Lucy doesn't hear Sean's message
+         @run-me
+         Scenario: Message too long
+             Given a person named Sean
+             And a person named Lucy
+             When Sean shouts the following message
+             """
+             01234567890123456789012345678901234567890123456789012345
+             678901234567890123456789012345678901234567890123456789012345678901234
+             5678901234567890123456789012345678901234567890123456789x
+             """
+             Then Lucy doesn't hear Sean's message

@@ -19,7 +19,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 353009541
+              "duration": 336868875
             }
           },
           {
@@ -51,7 +51,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1215426375
+              "duration": 1218296084
             }
           },
           {
@@ -64,7 +64,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14130208
+              "duration": 28191333
             }
           },
           {
@@ -77,7 +77,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 327486375
+              "duration": 330046333
             }
           }
         ],
@@ -101,7 +101,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 312825083
+              "duration": 314015167
             }
           },
           {
@@ -133,7 +133,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1216608999
+              "duration": 1217474499
             }
           },
           {
@@ -146,7 +146,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12750750
+              "duration": 14100084
             }
           },
           {
@@ -159,11 +159,84 @@
             },
             "result": {
               "status": "passed",
-              "duration": 309169957
+              "duration": 312963667
             }
           }
         ],
         "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "hear-shout;shouts-should-only-be-heard-if-listener-is-within-range;message-too-long",
+        "keyword": "Scenario",
+        "line": 45,
+        "name": "Message too long",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 46,
+            "name": "a person named Sean",
+            "match": {
+              "location": "file:/Users/kerry.h/work/cucumber-js-rest-api/test/bdd/features/step_definitions/steps.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 604983833
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 47,
+            "name": "a person named Lucy",
+            "match": {
+              "location": "file:/Users/kerry.h/work/cucumber-js-rest-api/test/bdd/features/step_definitions/steps.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 604372709
+            }
+          },
+          {
+            "arguments": [
+              {
+                "content": "01234567890123456789012345678901234567890123456789012345\n678901234567890123456789012345678901234567890123456789012345678901234\n5678901234567890123456789012345678901234567890123456789x",
+                "line": 49
+              }
+            ],
+            "keyword": "When ",
+            "line": 48,
+            "name": "Sean shouts the following message",
+            "match": {
+              "location": "file:/Users/kerry.h/work/cucumber-js-rest-api/test/bdd/features/step_definitions/shout_steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5245874
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 54,
+            "name": "Lucy doesn't hear Sean's message",
+            "match": {
+              "location": "file:/Users/kerry.h/work/cucumber-js-rest-api/test/bdd/features/step_definitions/steps.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 713249
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@run-me",
+            "line": 44
+          }
+        ],
         "type": "scenario"
       }
     ],

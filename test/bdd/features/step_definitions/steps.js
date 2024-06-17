@@ -55,7 +55,6 @@ Then('{Person} hears the following messages:', function (hearer, expectedMessage
 });
 
 Then('{Person} only hears {Person}\'s message when she is in range', async function (hearer, shouter) {
-
     await sleep(3)
     const inRange = await checkInRange(hearer.name)
 

@@ -1,7 +1,7 @@
 {
-  "name": "cucumber-js",
+  "name": "cucumber-js-rest-api",
   "version": "1.0.0",
-  "description": "A simple sample project 'shouty.js' showing how to use cucumber-js combined with mocha and chai for development with Behaviour-Driven and Test-Driven Development.",
+  "description": "A simple sample project 'shouty.js', accessed via a Restful API, showing how to use cucumber-js combined with mocha and chai for development with Behaviour-Driven and Test-Driven Development.",
   "main": "src/shouty.js",
   "type": "module",
   "scripts": {
@@ -13,7 +13,7 @@
     "cucumber"
   ],
   "author": "Kerry Harris",
-  "homepage": "https://github.com/yrstruely/cucumber-js",
+  "homepage": "https://github.com/yrstruely/cucumber-js-rest-api",
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "latest",

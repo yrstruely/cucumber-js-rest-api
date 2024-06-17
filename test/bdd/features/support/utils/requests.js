@@ -41,7 +41,6 @@ export async function addPersonInNetwork(name) {
 export async function shout(shouter, message) {
     const url = baseUrl + shoutPath;
     const msg = `POST request successful: "${url}" expect passed, new person ${message}`
-
     const shoutBody = { from: { name: shouter.name, },  message }
 
     await doPost( url, shoutBody,  msg)
@@ -88,9 +87,7 @@ export async function getPersonHeardMessages(name) {
 
 async function doGet(url, successMessage) {
     try {
-
         const response = await client.get(url);
-
         const ret = response.data.data
         return ret
 

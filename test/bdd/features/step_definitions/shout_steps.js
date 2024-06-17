@@ -5,7 +5,6 @@ import {
 } from '../support/utils/requests.js'
 
 When('{Person} shouts {string}', async function (shouter, message) {
-    // this.shout({ from: shouter, message })
     await shout(shouter, message)
 });
 

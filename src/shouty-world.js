@@ -61,9 +61,6 @@ export function shout({ from, message }) {
     console.log('after shoutyWord.network', shoutyWord.network)
 }
 
-/*
-this.people[hearer.name].inRange()
-*/
 export function isPersonInRange(name) {
     const person = shoutyWord.people[name]
 

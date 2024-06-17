@@ -32,8 +32,6 @@ app.post('/range', (req, res) => {
 
   setRange(range)
 
-  console.log('================= Set Range', range)
-
   res.status(201).json({
     data: 'success'
   });
@@ -48,8 +46,6 @@ app.post('/person/add', (req, res) => {
 
   newPerson({ name, location });
 
-  console.log('================= Add person', name)
-
   res.status(201).json({
     data: 'success'
   });
@@ -63,9 +59,7 @@ app.post('/network/person-add', (req, res) => {
   }
 
   addPersonInNetwork({ name });
-
-
-  console.log('================= Add network person', name)
+  
   res.status(201).json({
     data: 'success'
   });
