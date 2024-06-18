@@ -5,16 +5,22 @@ import { Person } from '../../../../src/shouty.js';
 
 import {
     sleep
-} from '../support/utils/utils.js'
+} from '../support/util/tools.js'
 
 import {
     changeRange,
+    checkInRange
+} from '../support/action/range-action.js'
+
+import {
     addPerson,
     addPersonInNetwork,
     getPersonHeardMessages,
-    checkInRange,
+} from '../support/action/person-action.js'
+
+import {
     getMessage
-} from '../support/utils/requests.js'
+} from '../support/action/message-action.js'
 
 const default_distance = 0
 
@@ -33,7 +39,6 @@ Given('a person named {word}', async function (name) {
 
 Given('people are located at:', async function (dataTable) {
     for(const person of dataTable.transpose().hashes()) {
-        await sleep(3)
         addPerson(person.name, person.location)
 
         await sleep(3)

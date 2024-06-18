@@ -51,14 +51,9 @@ export function addPersonInNetwork({ name }) {
 }
 
 export function shout({ from, message }) {
-
-    console.log('shoutyWord.network', shoutyWord.network)
-
     if (from && message) {
         shoutyWord.shout({ from, message })
     }
-
-    console.log('after shoutyWord.network', shoutyWord.network)
 }
 
 export function isPersonInRange(name) {
@@ -80,14 +75,15 @@ export function getPersonHeardmMessages(name) {
         return person.messagesHeard()
     }
 
-    return []
-
     printStatus()
+    
+    return []
 }
 
 function printStatus() {
 
-    console.log('message:', shoutyWord.message)
-    console.log('people:', shoutyWord.people)
-    console.log('network:', shoutyWord.network)
+    console.log('current shout world status: ', shoutyWord)
+    // console.log('message:', shoutyWord.message)
+    // console.log('people:', shoutyWord.people)
+    // console.log('network:', shoutyWord.network)
 }
