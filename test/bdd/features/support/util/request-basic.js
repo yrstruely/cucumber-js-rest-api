@@ -6,7 +6,7 @@ import {
 } from 'chai';
 
 // basic urls and paths
-export const baseUrl = 'http://localhost:3000';
+export const baseUrl = 'http://localhost:3001';
 
 export const rangePath = '/range'
 export const personAddPath = '/person/add'
