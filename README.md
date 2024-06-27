@@ -30,17 +30,17 @@ npm install
 
 Before running the application, you need to have [Node.js](https://nodejs.org/) installed on your machine.
 
-To run the application:
+ - Run the tests:
+```bash
+sh run-tests.sh
+```
+
+To run the application separately i.e. for manually testing:
 
  - Run the API:
  ```bash
  node src/api/server.js
  ```
-
- - Run the tests:
-```bash
-npm test
-```
 
 ## Features
 
@@ -143,7 +143,7 @@ describe('Network', () => {
 To run the tests, use the following command:
 
 ```bash
-npm test
+sh run-tests.sh
 ```
 
 This will run both the cucumber feature tests and the mocha unit tests.
